@@ -176,22 +176,22 @@ def mergeSort(draw_info,ascending = True):
 			time.sleep(1/draw_info.SPEED)
 			mid = (high+low)//2
 			L = array[:len(array)//2]
-			M = array[len(array)//2:]
+			R = array[len(array)//2:]
 			merge_sort(draw_info,low,mid-1,L,ascending)
-			merge_sort(draw_info,mid,high,M,ascending)
+			merge_sort(draw_info,mid,high,R,ascending)
 			i = j = k = 0
-			while i < len(L) and j < len(M):
+			while i < len(L) and j < len(R):
 				draw_list(draw_info,{low+k:draw_info.GREEN})
 				time.sleep(1/draw_info.SPEED)
-				if (L[i] < M[j] and ascending) or (L[i] > M[j] and not ascending):
+				if (L[i] < R[j] and ascending) or (L[i] > R[j] and not ascending):
 					array[k] = L[i]
 					draw_info.lst[low+k] = L[i]
 					draw_list(draw_info,{low + k:draw_info.RED})
 					time.sleep(1/draw_info.SPEED)
 					i += 1
 				else:
-					array[k] = M[j]
-					draw_info.lst[low+k] = M[j]
+					array[k] = R[j]
+					draw_info.lst[low+k] = R[j]
 					draw_list(draw_info,{low+k:draw_info.RED})
 					time.sleep(1/draw_info.SPEED)
 					j += 1
@@ -205,11 +205,11 @@ def mergeSort(draw_info,ascending = True):
 				time.sleep(1/draw_info.SPEED)
 				i += 1
 				k += 1
-			while j < len(M):
+			while j < len(R):
 				draw_list(draw_info,{low+k:draw_info.GREEN})
 				time.sleep(1/draw_info.SPEED)
-				array[k] = M[j]
-				draw_info.lst[low+k] = M[j]
+				array[k] = R[j]
+				draw_info.lst[low+k] = R[j]
 				draw_list(draw_info,{low+k:draw_info.RED})
 				time.sleep(1/draw_info.SPEED)
 				j += 1
