@@ -5,4 +5,4 @@ Bubble Sort.
 Insertion Sort.
 Merge Sort.
 Quick Sort.
-##stack: python , pygame
+stack: python, pygame library
